@@ -13,6 +13,24 @@ ul{
 .header{
     background-color: #ffffff;
 }
+.header-container {
+  max-width: 1158px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba 255, 0, 0, 0.2;
+}
+.nav-wrapper{
+    display: flex;
+    align-items: center;
+}
+.logo-wrapper{
+    display: flex;
+    align-items: center;
+    margin-right: 76px;
+}
 .logo-header{
     font-family: "Raleway", sans-serif;
     font-weight: 700;
@@ -21,6 +39,7 @@ ul{
     letter-spacing: 0.03em;
     color:#4d5ae5;
     text-transform: uppercase;
+    display: inline-block;
 }
 .logo-studio{
     color: #2e2f42;
@@ -32,6 +51,11 @@ ul{
     line-height: 1.5;
     letter-spacing: 0.02em;
     color:#434455;
+    list-style-type: none;
+    display: flex;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
 }
 .nav-link{
     text-decoration: none;
@@ -47,6 +71,9 @@ ul{
     font-style:normal;
     color:#434455;
     letter-spacing: 0.02em;
+}
+.contacts-list{
+    list-style-type: none;
 }
 .contact-link{
     text-decoration: none;
@@ -81,6 +108,9 @@ ul{
 }
 .hero-button:hover, .hero-button:focus{
     background-color: #404BBF;
+}
+.advantages-list{
+    list-style-type: none;
 }
 .advantages-subtitle{
     font-family: "Roboto", sans-serif;
