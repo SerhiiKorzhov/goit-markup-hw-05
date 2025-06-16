@@ -265,6 +265,9 @@ img{
     text-align: center;
     background-color: #FFFFFF;
 }
+.our-team-text-block{
+    padding: 32px 16px;
+}
 
 .portfolio {
     font-family: "Roboto", sans-serif;
