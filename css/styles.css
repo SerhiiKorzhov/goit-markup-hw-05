@@ -12,6 +12,7 @@ a {
 
 ul {
   text-decoration: none;
+  list-style-type: none;
 }
 
 li {
@@ -151,6 +152,7 @@ nav{
   background-color: #2e2f42;
   text-align: center;
   letter-spacing: 0.02em;
+  padding: 188px 0;
 }
 
 .hero .container {
@@ -158,7 +160,6 @@ nav{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 188px 0;
 }
 
 .hero-title {
@@ -304,17 +305,13 @@ nav{
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  column-gap: 24px;
   row-gap: 48px;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-}
+} 
 
 .portfolio-item {
-  list-style-type: none;
-  object-fit: cover;
-  overflow: hidden;
+ 
+ 
   width: calc((100%-48px) / 3);
 }
 
