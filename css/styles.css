@@ -214,7 +214,8 @@ nav{
   flex-direction: row;
   gap: 24px;
   justify-content: center;
-  margin: 120px 0;
+  margin: 0;
+  padding-left: 0;
 }
 .advantages-item {
   width: calc((100% - 72px) / 4);
