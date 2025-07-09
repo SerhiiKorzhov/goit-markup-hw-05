@@ -631,3 +631,46 @@ nav {
   fill:#f4f4fd;
 }
 
+.backdrop{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  background-color:rgba(46, 47, 66, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+
+  pointer-events: 
+  transition: opacity 0.3s ease;
+}
+
+.backdrop .is-open{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: 
+}
+
+.modal{
+  background-color: #fcfcfc;
+  width: 408px;
+  padding: 40px;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.modal-btn-close{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border-radius: 50%;
+  border: none;
+  width: 24px;
+  height: 24px;
+  color:#e7e9fc;
+}
