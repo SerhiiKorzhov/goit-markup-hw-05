@@ -638,7 +638,7 @@ nav {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop.is-open {
   opacity: 1;
@@ -647,34 +647,53 @@ nav {
 }
 
 .modal {
+  top: 50%;
+  left: 50%;
   background-color: #fcfcfc;
+  transform: translate(-50%, -50%);
   width: 408px;
-  padding: 40px;
+  min-height: 584px;
+  padding: 72px 24px 24px 24px;
   border-radius: 4px;
-  position: relative;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn-close {
   position: absolute;
-  top: 8px;
-  right: 8px;
-  background: none;
-  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 24px;
+  right: 24px;
+  border-radius: 50%;
+  background-color: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   width: 24px;
   height: 24px;
+  padding: 0;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-close-icon {
-  stroke: #2e2f42;
-  transition: stroke 0.3s ease;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-btn-close:hover .modal-close-icon,
-.modal-btn-close:focus .modal-close-icon {
-  stroke: #4d5ae5;
+.modal-btn-close:hover, 
+.modal-btn-close:focus-within,
+.modal-close-icon:hover,
+.modal-close-icon:focus{
+  background-color:#404bbf;
+  border: none;
+  fill:#ffffff
 }
 
 .modal-title {
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
   font-size: 16px;
   font-weight: 500;
   color: #2e2f42;
@@ -683,7 +702,7 @@ nav {
 
 .input-wrapper {
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .modal-input-label {
@@ -696,15 +715,17 @@ nav {
   color: #8e8f99;
 }
 
-.modal-input,
-.modal-textarea {
+.modal-input{
   width: 100%;
-  padding: 10px 10px 10px 36px;
+  height: 40px;
+  padding-left: 38px;
   border: 1px solid rgba(46, 47, 66, 0.4);
+  background-color: transparent;
+  outline: transparent;
   border-radius: 4px;
   font-size: 14px;
   color: #2e2f42;
-  transition: border-color 0.3s ease;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
 }
 
@@ -717,14 +738,15 @@ nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 12px;
+  left: 16px;
   pointer-events: none;
   fill: #2E2F42;
-  transition: fill 0.3s ease;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .input-icon-wrapper {
   position: relative;
+  margin-bottom: 8px;
 }
 
 .input-icon-wrapper:focus-within .input-icon {
@@ -732,17 +754,62 @@ nav {
 }
 
 .modal-textarea {
+  width: 100%;
   resize: none;
   height: 120px;
   padding: 8px 16px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: rgba(46, 47, 66, 0.4);
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-checkbox-label {
+.checkbox-wrapper {
+  margin-bottom: 24px;
+}
+
+.checkbox-text {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+}
+
+.checkbox-slot{
+  width: 16px;
+  height: 16px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 2px;
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+   border 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+   fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   fill:transparent;
+}
+.checkbox-icon {
+  fill: transparent;
+}
+
+input:checked + .checkbox-slot {
+  background-color: #404bbf;
+  border: none;
+}
+
+input:checked + .checkbox-slot .checkbox-icon {
+  fill: #F4F4FD;
+}
+  /*.checkbox-wrapper{
   display: flex;
   align-items: center;
   font-size: 14px;
   color: #8e8f99;
-  margin-bottom: 24px;
 }
 
 .modal-checkbox-label input {
@@ -754,9 +821,7 @@ nav {
   text-decoration: underline;
 }
 
-.checkbox-text {
-  color: #8e8f99;
-}
+
 
 .policy-link {
   color: #4d5ae5;
