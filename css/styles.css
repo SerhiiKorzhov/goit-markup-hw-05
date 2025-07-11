@@ -702,7 +702,7 @@ nav {
 
 .input-wrapper {
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .modal-input-label {
@@ -751,6 +751,11 @@ nav {
 
 .input-icon-wrapper:focus-within .input-icon {
   fill: #4d5ae5;
+}
+
+.input-wrapper-commit{
+  margin-bottom: 16px;
+  position: relative;
 }
 
 .modal-textarea {
